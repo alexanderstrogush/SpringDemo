@@ -15,8 +15,26 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepository productRepository;
 
     @Override
-    public Optional<List<Product>> getAllById(Long id) {
-        Optional<List<Product>> products = productRepository.getAllByCategory_Id(id);
+    public Optional<List<Product>> getAllByCategoryId(Long id) {
         return productRepository.getAllByCategory_Id(id);
+    }
+
+    @Override
+    public Optional<Product> getById(long id) {
+        return productRepository.findById(id);
+    }
+
+    public Optional<Product> save(Product product) {
+        return Optional.of(productRepository.save(product));
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        productRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<Product> update(Product product) {
+        return Optional.of(productRepository.save(product));
     }
 }

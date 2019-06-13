@@ -25,16 +25,16 @@ public class HelloController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/add-user", method = RequestMethod.GET)
-    public ModelAndView addUser(ModelAndView modelAndView) {
-        modelAndView.addObject("user", new User());
-        modelAndView.setViewName("add-user");
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "/add-user", method = RequestMethod.POST)
-    public ModelAndView addUser(@ModelAttribute User user) {
-        System.out.println();
-        return null;
-    }
+//    @RequestMapping(value = "/add-user", method = RequestMethod.GET)
+//    public ModelAndView addUser(ModelAndView modelAndView) {
+//        modelAndView.addObject("user", new User());
+//        modelAndView.setViewName("add-user");
+//        return modelAndView;
+//    }
+//
+//    @RequestMapping(value = "/add-user", method = RequestMethod.POST)
+//    public ModelAndView addUser(@ModelAttribute User user) {
+//        System.out.println();
+//        return null;
+//    }
 }

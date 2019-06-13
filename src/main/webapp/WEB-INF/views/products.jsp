@@ -13,26 +13,28 @@
 </head>
 <body>
 
-<table>
-    <caption>Products</caption>
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-    </tr>
+    <a href="/add-product?c_id=${param.c_id}">Add new product</a>
 
-    <c:forEach var="p" items="${products}">
+    <table>
+        <caption>Products</caption>
         <tr>
-            <td><c:out value="${p.id}"/></td>
-            <td><c:out value="${p.name}"/></td>
-            <td><c:out value="${p.description}"/></td>
-            <td><c:out value="${p.price}"/></td>
-<%--            <td><a href="/edit-category?c_id=${c.id}">Edit</a></td>--%>
-<%--            <td><a href="/delete-category?c_id=${c.id}">Delete</a></td>--%>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
         </tr>
-    </c:forEach>
-</table>
+
+        <c:forEach var="p" items="${products}">
+            <tr>
+                <td><c:out value="${p.id}"/></td>
+                <td><c:out value="${p.name}"/></td>
+                <td><c:out value="${p.description}"/></td>
+                <td><c:out value="${p.price}"/></td>
+                <td><a href="/edit-product?p_id=${p.id}">Edit</a></td>
+                <td><a href="/delete-product?p_id=${p.id}&c_id=${param.c_id}">Delete</a></td>
+            </tr>
+        </c:forEach>
+    </table>
 
 </body>
 </html>

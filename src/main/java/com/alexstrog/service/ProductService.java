@@ -7,5 +7,13 @@ import java.util.Optional;
 
 public interface ProductService {
 
-    Optional<List<Product>> getAllById(Long id);
+    Optional<List<Product>> getAllByCategoryId(Long id);
+
+    Optional<Product> getById(long id);
+
+    Optional<Product> save(Product product);
+
+    void deleteById(Long id);
+
+    Optional<Product> update(Product product);
 }

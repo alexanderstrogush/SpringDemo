@@ -107,7 +107,6 @@ public class ApplicationConfiguration implements WebApplicationInitializer {
 
         servletContext.addListener(new ContextLoaderListener(rootContext));
 
-
         ServletRegistration.Dynamic dispatcher = servletContext.addServlet("dispatcher",
                 new DispatcherServlet(rootContext));
         dispatcher.setLoadOnStartup(1);
